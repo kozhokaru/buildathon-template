@@ -10,7 +10,7 @@
 ## ✨ Features
 
 ### Core Infrastructure
-- 🔐 **Authentication System** - Complete auth flow with email/password + Google/GitHub OAuth
+- 🔐 **Authentication System** - Complete auth flow with email/password + GitHub OAuth
 - 🤖 **AI Integration** - Claude API with streaming responses and function calling
 - 🎨 **Component Library** - 10+ shadcn/ui components with dark mode support
 - 📊 **Dashboard Template** - Protected routes with responsive sidebar navigation
@@ -49,12 +49,11 @@ cp .env.local.example .env.local
 
 1. Create a new project at [supabase.com](https://supabase.com)
 2. Go to **Settings → API** to get your keys
-3. Configure OAuth providers (optional):
-   - **Google OAuth**: Enable in **Authentication → Providers**
-   - **GitHub OAuth**: 
-     - Enable in **Authentication → Providers**
-     - Create OAuth App at [github.com/settings/applications/new](https://github.com/settings/applications/new)
-     - Set callback URL: `https://YOUR_PROJECT.supabase.co/auth/v1/callback`
+3. Configure GitHub OAuth (optional):
+   - Enable GitHub in **Authentication → Providers**
+   - Create OAuth App at [github.com/settings/applications/new](https://github.com/settings/applications/new)
+   - Add Client ID & Secret to Supabase
+   - Set callback URL: `https://YOUR_PROJECT.supabase.co/auth/v1/callback`
 4. Run the database migrations (see Database Setup below)
 
 ### 3. Configure Environment
@@ -84,7 +83,7 @@ Open [http://localhost:3000](http://localhost:3000) 🎉
 hackathon-template/
 ├── app/
 │   ├── (auth)/               # Authentication pages
-│   │   ├── login/           # Login page with OAuth (Google/GitHub)
+│   │   ├── login/           # Login page with GitHub OAuth
 │   │   ├── signup/          # Signup with validation
 │   │   ├── forgot-password/ # Password reset request
 │   │   └── reset-password/  # Set new password
